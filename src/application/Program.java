@@ -1,5 +1,5 @@
 
-package system.chess;
+package application;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ import xadrez.PecaDeXadrez;
 import xadrez.xadrezException;
 import xadrez.xadrezPosition;
 
-public class SystemChess {
+public class Program {
 
     public static void main(String[] args) {
         
