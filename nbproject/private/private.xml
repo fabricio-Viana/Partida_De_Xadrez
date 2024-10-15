@@ -5,14 +5,14 @@
         <group>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/PecaDeXadrez.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/PartidaDeXadrez.java</file>
-            <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/system/chess/UI.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/tabuleiro/Tabuleiro.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/tabuleiro/Peca.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/tabuleiro/Position.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/tabuleiro/TabException.java</file>
-            <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/system/chess/SystemChess.java</file>
+            <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/application/UI.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/xadrezException.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/Color.java</file>
+            <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/application/Program.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/xadrezPosition.java</file>
         </group>
     </open-files>
