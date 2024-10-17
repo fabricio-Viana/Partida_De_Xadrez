@@ -24,7 +24,7 @@ public class UI {
 	public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
 	public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 	public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-	public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+	public static final String ANSIL_YELLOW_BACKGROUND = "\u001B[43m";
 	public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
 	public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
@@ -53,7 +53,7 @@ public class UI {
         for(int i = 0 ; i < pecas.length; i++){
             System.out.print( (8-i) + " ");
             for(int j =0; j < pecas.length; j++){
-            printPeca(pecas[i][j]);
+            printPeca(pecas[i][j],false);
             }
             System.out.println();       
         }
@@ -62,9 +62,26 @@ public class UI {
     
     }
     
-    private static void printPeca(PecaDeXadrez piece) {
+    public static void printTabuleiro(PecaDeXadrez[][] pecas, boolean[][] possivelMovimento){
+        
+        for(int i = 0 ; i < pecas.length; i++){
+            System.out.print( (8-i) + " ");
+            for(int j =0; j < pecas.length; j++){
+            printPeca(pecas[i][j], possivelMovimento[i][j]);
+            }
+            System.out.println();       
+        }
+        
+            System.out.println("  a b c d e f g h");
+    
+    }
+    
+    private static void printPeca(PecaDeXadrez piece, boolean planoDeFundo) {
+        if(planoDeFundo){
+            System.out.print(ANSI_RED_BACKGROUND);
+        }
     	if (piece == null) {
-            System.out.print("-");
+            System.out.print("-" + ANSI_RESET);
         }
         else {
             if (piece.getColor() == Color.WHITE) {

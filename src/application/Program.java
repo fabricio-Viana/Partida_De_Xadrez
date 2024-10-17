@@ -26,6 +26,10 @@ public class Program {
                  System.out.println();
                  System.out.println("origin: ");
                  xadrezPosition origin = UI.lerPositionXadrez(sc);
+                 
+                 boolean[][] possivelMovimento = partida.possiveisMovimentos(origin);
+                 UI.clearScreen();
+                 UI.printTabuleiro(partida.GetPecas(),possivelMovimento);
 
                  System.out.println();
                  System.out.println("destiny: ");

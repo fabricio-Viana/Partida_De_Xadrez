@@ -38,6 +38,12 @@ public class PartidaDeXadrez {
          return (PecaDeXadrez)capturePeca;
      }
      
+     public boolean[][] possiveisMovimentos(xadrezPosition originPosition){
+         Position position = originPosition.toPosition();
+         validadeOriginPosition(position);
+         return tabuleiro.peca(position).MovimentosPossiveis();
+     }
+     
      private Peca makeMove(Position origin, Position destiny){
          Peca p = tabuleiro.removePeca(origin);
          Peca capturePeca = tabuleiro.removePeca(destiny);
