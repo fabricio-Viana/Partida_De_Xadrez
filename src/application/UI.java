@@ -4,6 +4,7 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import xadrez.Color;
+import xadrez.PartidaDeXadrez;
 import xadrez.PecaDeXadrez;
 import xadrez.xadrezPosition;
 
@@ -61,6 +62,16 @@ public class UI {
             System.out.println("  a b c d e f g h");
     
     }
+    
+    
+    public static void printPartida(PartidaDeXadrez partida){
+    
+        printTabuleiro(partida.GetPecas());
+        System.out.println("");
+        System.out.println("Turno : " + partida.getTurn());
+        System.out.println("Esperando o Jogador "+ partida.getCurrentPlayer());
+    } 
+    
     
     public static void printTabuleiro(PecaDeXadrez[][] pecas, boolean[][] possivelMovimento){
         

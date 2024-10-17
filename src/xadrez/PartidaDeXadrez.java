@@ -12,10 +12,14 @@ import xadrez.peças.Torre;
 
 public class PartidaDeXadrez {
     
+    private int turn;
+    private Color currentPlayer;
     private Tabuleiro tabuleiro;
     
     public PartidaDeXadrez(){
         tabuleiro = new Tabuleiro(8,8);
+        turn = 1;
+        currentPlayer = Color.WHITE;
         iniciarPartida();
     };
     
@@ -29,12 +33,21 @@ public class PartidaDeXadrez {
         return mat;
     }
     
+        public int getTurn(){
+            return turn;
+        }
+    
+        public Color getCurrentPlayer(){
+            return currentPlayer;
+        }
+    
      public PecaDeXadrez executarMovimento (xadrezPosition originPosition, xadrezPosition destinyPosition){
          Position origin = originPosition.toPosition();
          Position destiny = destinyPosition.toPosition();
          validadeOriginPosition(origin);
          validadeDestinyPosition(origin,destiny);
          Peca capturePeca = makeMove(origin, destiny);
+         nextTurn();
          return (PecaDeXadrez)capturePeca;
      }
      
@@ -56,6 +69,9 @@ public class PartidaDeXadrez {
          if(!tabuleiro.temPecaNaposition(position)){
              throw new xadrezException("Não existe peça na posição de origem");
          }
+         if(currentPlayer != ((PecaDeXadrez)tabuleiro.peca(position)).getColor()){
+             throw new xadrezException("A peça escolhida não é sua.");
+         }
          if(!tabuleiro.peca(position).oMovientoEPossivel()){
              throw new xadrezException("Não existe movimentos possiveis para esta peça");
          }
@@ -66,6 +82,11 @@ public class PartidaDeXadrez {
               throw new xadrezException("A peça escolhida não pode se mover para a posição de destino");
          }
      
+     }
+     
+     private void nextTurn(){
+         turn++;
+         currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
      }
     
     private void novoEspacoPeca(char coluna, int linha, PecaDeXadrez peca){

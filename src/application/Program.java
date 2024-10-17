@@ -22,7 +22,7 @@ public class Program {
           try{
               
                 UI.clearScreen();
-                UI.printTabuleiro(partida.GetPecas());
+                UI.printPartida(partida);
                  System.out.println();
                  System.out.println("origin: ");
                  xadrezPosition origin = UI.lerPositionXadrez(sc);
