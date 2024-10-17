@@ -5,6 +5,7 @@
         <group>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/PecaDeXadrez.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/PartidaDeXadrez.java</file>
+            <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/xadrez/peças/Torre.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/tabuleiro/Tabuleiro.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/tabuleiro/Peca.java</file>
             <file>file:/home/fabricio-viana/NetBeansProjects/system-chess/src/tabuleiro/Position.java</file>
