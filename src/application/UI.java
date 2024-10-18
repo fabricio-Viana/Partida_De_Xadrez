@@ -1,8 +1,11 @@
 
 package application;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import xadrez.Color;
 import xadrez.PartidaDeXadrez;
 import xadrez.PecaDeXadrez;
@@ -64,9 +67,11 @@ public class UI {
     }
     
     
-    public static void printPartida(PartidaDeXadrez partida){
+    public static void printPartida(PartidaDeXadrez partida, List<PecaDeXadrez> capiturado){
     
         printTabuleiro(partida.GetPecas());
+        System.out.println("");
+        printPecasCapituradas(capiturado);
         System.out.println("");
         System.out.println("Turno : " + partida.getTurn());
         System.out.println("Esperando o Jogador "+ partida.getCurrentPlayer());
@@ -104,4 +109,22 @@ public class UI {
         }
         System.out.print(" ");
 	}
+    
+    private static void printPecasCapituradas(List<PecaDeXadrez> capiturado){
+        List<PecaDeXadrez> white = capiturado.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
+        List<PecaDeXadrez> black = capiturado.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
+        
+        System.out.println("Peças capiturdas: ");
+        System.out.print("WHITE: ");
+        System.out.print(ANSI_GREEN);
+        System.out.println(Arrays.toString(white.toArray()));
+        System.out.print(ANSI_RESET);
+        
+        System.out.print("BLACK: ");
+        System.out.print(ANSI_PURPLE);
+        System.out.println(Arrays.toString(black.toArray()));
+        System.out.print(ANSI_RESET);
+        
+    }   
+    
 }
