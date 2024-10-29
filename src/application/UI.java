@@ -75,6 +75,9 @@ public class UI {
         System.out.println("");
         System.out.println("Turno : " + partida.getTurn());
         System.out.println("Esperando o Jogador "+ partida.getCurrentPlayer());
+        if(partida.getCheck()){
+            System.out.println("CHECK");
+        }
     } 
     
     

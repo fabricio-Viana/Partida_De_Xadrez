@@ -31,7 +31,7 @@ public class xadrezPosition {
     
     protected static xadrezPosition daPosition (Position position){
     
-        return new xadrezPosition((char)('a'- position.getColuna()),8 - position.getLinha());
+        return new xadrezPosition((char)('a'+ position.getColuna()),8 - position.getLinha());
     
     }  
     
