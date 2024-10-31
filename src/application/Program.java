@@ -21,7 +21,7 @@ public class Program {
        PartidaDeXadrez partida = new PartidaDeXadrez();
        List<PecaDeXadrez> capiturado = new ArrayList<>();
        
-       while(true){
+       while(!partida.getCheckMate()){
           try{
               
                 UI.clearScreen();
@@ -53,6 +53,9 @@ public class Program {
            
        
        }
+       
+       UI.clearScreen();
+       UI.printPartida(partida, capiturado);
        
     }
     
