@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import tabuleiro.Peca;
 import tabuleiro.Position;
 import tabuleiro.Tabuleiro;
+import xadrez.peças.Peao;
 import xadrez.peças.Rei;
 import xadrez.peças.Torre;
 
@@ -204,13 +205,30 @@ public class PartidaDeXadrez {
     };
     private void iniciarPartida(){
    
-        novoEspacoPeca('h', 7, new Torre(tabuleiro, Color.WHITE));
-        novoEspacoPeca('d', 1, new Torre(tabuleiro, Color.WHITE));
+        novoEspacoPeca('a', 1, new Torre(tabuleiro, Color.WHITE));
+        novoEspacoPeca('h', 1, new Torre(tabuleiro, Color.WHITE));
         novoEspacoPeca('e', 1, new Rei(tabuleiro, Color.WHITE));
-
+        novoEspacoPeca('a', 2, new Peao(tabuleiro, Color.WHITE));
+        novoEspacoPeca('b', 2, new Peao(tabuleiro, Color.WHITE));
+        novoEspacoPeca('c', 2, new Peao(tabuleiro, Color.WHITE));
+        novoEspacoPeca('d', 2, new Peao(tabuleiro, Color.WHITE));
+        novoEspacoPeca('e', 2, new Peao(tabuleiro, Color.WHITE));
+        novoEspacoPeca('f', 2, new Peao(tabuleiro, Color.WHITE));
+        novoEspacoPeca('g', 2, new Peao(tabuleiro, Color.WHITE));
+        novoEspacoPeca('h', 2, new Peao(tabuleiro, Color.WHITE));
         
-        novoEspacoPeca('b', 8, new Torre(tabuleiro, Color.BLACK));
-        novoEspacoPeca('a', 8, new Rei(tabuleiro, Color.BLACK));
+        novoEspacoPeca('a', 8, new Torre(tabuleiro, Color.BLACK));
+        novoEspacoPeca('h', 8, new Torre(tabuleiro, Color.BLACK));
+        novoEspacoPeca('e', 8, new Rei(tabuleiro, Color.BLACK));
+        novoEspacoPeca('a', 7, new Peao(tabuleiro, Color.BLACK));
+        novoEspacoPeca('b', 7, new Peao(tabuleiro, Color.BLACK));
+        novoEspacoPeca('c', 7, new Peao(tabuleiro, Color.BLACK));
+        novoEspacoPeca('d', 7, new Peao(tabuleiro, Color.BLACK));
+        novoEspacoPeca('e', 7, new Peao(tabuleiro, Color.BLACK));
+        novoEspacoPeca('f', 7, new Peao(tabuleiro, Color.BLACK));
+        novoEspacoPeca('g', 7, new Peao(tabuleiro, Color.BLACK));
+        novoEspacoPeca('h', 7, new Peao(tabuleiro, Color.BLACK));
     };
+    
     
 }
