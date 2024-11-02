@@ -8,14 +8,26 @@ import tabuleiro.Tabuleiro;
 public abstract class PecaDeXadrez extends Peca{
     
     private Color color;
+    protected int moveCount;
 
     public PecaDeXadrez(Color color ,Tabuleiro tabuleiro) {
         super(tabuleiro);
         this.color = color;
     }
 
+    public int getMoveCount() {
+        return moveCount;
+    }
+
     public Color getColor() {
         return color;
+    }
+    
+    public void addMoveCount(){
+        moveCount++;
+    }
+    public void removeMoveCount(){
+        moveCount--;
     }
     public xadrezPosition getXadrezPosition(){
         return xadrezPosition.daPosition(position);
