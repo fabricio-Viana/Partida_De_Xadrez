@@ -11,6 +11,7 @@ import tabuleiro.Tabuleiro;
 import xadrez.peças.Bispo;
 import xadrez.peças.Cavalo;
 import xadrez.peças.Peao;
+import xadrez.peças.Rainha;
 import xadrez.peças.Rei;
 import xadrez.peças.Torre;
 
@@ -214,6 +215,7 @@ public class PartidaDeXadrez {
         novoEspacoPeca('f', 1, new Bispo(tabuleiro, Color.WHITE));
         novoEspacoPeca('h', 1, new Torre(tabuleiro, Color.WHITE));
         novoEspacoPeca('e', 1, new Rei(tabuleiro, Color.WHITE));
+        novoEspacoPeca('d', 1, new Rainha(tabuleiro, Color.WHITE));
         novoEspacoPeca('a', 2, new Peao(tabuleiro, Color.WHITE));
         novoEspacoPeca('b', 2, new Peao(tabuleiro, Color.WHITE));
         novoEspacoPeca('c', 2, new Peao(tabuleiro, Color.WHITE));
@@ -229,6 +231,7 @@ public class PartidaDeXadrez {
         novoEspacoPeca('c', 8, new Bispo(tabuleiro, Color.BLACK));
         novoEspacoPeca('f', 8, new Bispo(tabuleiro, Color.BLACK));
         novoEspacoPeca('h', 8, new Torre(tabuleiro, Color.BLACK));
+        novoEspacoPeca('d', 8, new Rainha(tabuleiro, Color.BLACK));
         novoEspacoPeca('e', 8, new Rei(tabuleiro, Color.BLACK));
         novoEspacoPeca('a', 7, new Peao(tabuleiro, Color.BLACK));
         novoEspacoPeca('b', 7, new Peao(tabuleiro, Color.BLACK));
