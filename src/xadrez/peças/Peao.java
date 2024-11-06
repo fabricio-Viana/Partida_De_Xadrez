@@ -4,12 +4,16 @@ package xadrez.peças;
 import tabuleiro.Position;
 import tabuleiro.Tabuleiro;
 import xadrez.Color;
+import xadrez.PartidaDeXadrez;
 import xadrez.PecaDeXadrez;
 
 public class Peao extends PecaDeXadrez{
+    
+    private PartidaDeXadrez partida;
 
-    public Peao(Tabuleiro tabuleiro ,Color color) {
+    public Peao(Tabuleiro tabuleiro ,Color color,PartidaDeXadrez partida ) {
         super(color, tabuleiro);
+        this.partida = partida;
     }
 
     @Override
@@ -36,6 +40,18 @@ public class Peao extends PecaDeXadrez{
             if(getTabuleiro().positionExistis(p) && existeOponente(p)){
                 mat[p.getLinha()][p.getColuna()] = true;
             }
+            // special move EN passant whitw
+            
+            if(position.getLinha() == 3){
+                Position left = new Position(position.getLinha(),position.getColuna()-1);
+                if(getTabuleiro().positionExistis(left) && existeOponente(left) && getTabuleiro().peca(left) == partida.getEnPassantVul()){
+                    mat[left.getLinha()-1][left.getColuna()]= true;
+                }
+                Position right = new Position(position.getLinha(),position.getColuna()+1);
+                if(getTabuleiro().positionExistis(right) && existeOponente(right) && getTabuleiro().peca(right) == partida.getEnPassantVul()){
+                    mat[right.getLinha()-1][right.getColuna()]= true;
+                }
+            }
             
         }
         else{
@@ -57,7 +73,19 @@ public class Peao extends PecaDeXadrez{
             if(getTabuleiro().positionExistis(p) && existeOponente(p)){
                 mat[p.getLinha()][p.getColuna()] = true;
             }
-        
+            
+            // special move EN passant black
+            
+            if(position.getLinha() == 4){
+                Position left = new Position(position.getLinha(),position.getColuna()-1);
+                if(getTabuleiro().positionExistis(left) && existeOponente(left) && getTabuleiro().peca(left) == partida.getEnPassantVul()){
+                    mat[left.getLinha()+1][left.getColuna()]= true;
+                }
+                Position right = new Position(position.getLinha(),position.getColuna()+1);
+                if(getTabuleiro().positionExistis(right) && existeOponente(right) && getTabuleiro().peca(right) == partida.getEnPassantVul()){
+                    mat[right.getLinha()+1][right.getColuna()]= true;
+                }
+            }
         }
         return mat;
     }
@@ -67,4 +95,3 @@ public class Peao extends PecaDeXadrez{
         }
   
     }
-
