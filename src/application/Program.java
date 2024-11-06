@@ -44,7 +44,13 @@ public class Program {
                      
                      capiturado.add(capturePeca);
                  }
-           
+                 
+                 if(partida.getPromocao() != null){
+                     System.out.println("Qual a peça a ser promovida (B/C/R/T): ");
+                     String type = sc.next();
+                     partida.replacePromotedPeca(type);
+                     
+                 }
           }
           catch(xadrezException | InputMismatchException e){
               System.out.println(e.getMessage());
