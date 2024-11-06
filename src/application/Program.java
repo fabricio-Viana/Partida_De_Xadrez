@@ -47,7 +47,7 @@ public class Program {
                  
                  if(partida.getPromocao() != null){
                      System.out.println("Qual a peça a ser promovida (B/C/R/T): ");
-                     String type = sc.next();
+                     String type = sc.nextLine();
                      partida.replacePromotedPeca(type);
                      
                  }
