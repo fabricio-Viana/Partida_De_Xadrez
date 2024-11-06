@@ -157,7 +157,7 @@ public class PartidaDeXadrez {
                  
                  capturePeca = tabuleiro.removePeca(peaoPosition);
                  PecasCapturadas.add(capturePeca);
-                 PecasNoTabuleiro.add(capturePeca);
+                 PecasNoTabuleiro.remove(capturePeca);
              }
          }
          

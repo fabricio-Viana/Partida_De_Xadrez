@@ -74,6 +74,7 @@ public class Peao extends PecaDeXadrez{
                 mat[p.getLinha()][p.getColuna()] = true;
             }
             
+            
             // special move EN passant black
             
             if(position.getLinha() == 4){
